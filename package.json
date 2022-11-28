@@ -8,7 +8,7 @@
     "run": "npx cypress run",
     "test": "npm-run-all clean run report -c",
     "test:spec": "npm-run-all clean \"run -- --spec {1}\" report -c --",
-    "report": "npx mochawesome-merge cypress/reports/*.json > mochawesome.json && npx marge mochawesome.json && open mochawesome-report/mochawesome.html && rm -f mochawesome.json"
+    "report": "npx mochawesome-merge cypress/reports/*.json > mochawesome.json && npx marge mochawesome.json && start mochawesome-report/mochawesome.html && rm -f mochawesome.json"
   },
   "repository": {
     "type": "git",
