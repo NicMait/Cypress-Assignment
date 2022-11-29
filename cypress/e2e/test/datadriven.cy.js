@@ -1,4 +1,4 @@
-// {/* <reference types="cypress"/> */}
+
 
 import Login from '../pages/login.page'
 import usersData from '../data/users.data'

@@ -29,9 +29,22 @@ it('Add a single product to cart', () => {
 	cy.get('.inventory_item_price').should('have.text', '$15.99')
 
 	//checkout a single product
-	cy.get (Cart.checkoutBtn).should('be.visible')
-	cy.get (Cart.checkoutBtn).click()
+	cy.get(Cart.checkoutBtn).should('be.visible')
+	cy.get(Cart.checkoutBtn).click()
 	Cart.checkOutInfo()
+	cy.get(Cart.ctnBtn).should('be.visible')
+	cy.get(Cart.ctnBtn).click()
+
+	//Verify Information
+	cy.get('.inventory_item_name').should('have.text', 'Sauce Labs Bolt T-Shirt')
+	cy.get('.inventory_item_price').should('have.text', '$15.99')
+
+	//Complete process
+	cy.get(Cart.finish).should('be.visible')
+	cy.get(Cart.finish).click()
+	cy.get(Cart.completeBanner).should('have.text','THANK YOU FOR YOUR ORDER')
+
+
 
 
 
