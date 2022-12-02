@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-12-02T02:24:59.670Z",
+    "end": "2022-12-02T02:25:02.425Z",
+    "duration": 2755,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "952cd1b4-c21e-442b-b77d-8cba99e342c8",
+      "title": "",
+      "fullFile": "cypress\\e2e\\test\\sort.cy.js",
+      "file": "cypress\\e2e\\test\\sort.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6a4f8794-eeaf-4f08-a2e3-e3c5554bbbdd",
+          "title": "Sort By Price",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should sort product prices from high to low",
+              "fullTitle": "Sort By Price should sort product prices from high to low",
+              "timedOut": null,
+              "duration": 1469,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//login with a valid user\ncy.get('#user-name').type('standard_user');\ncy.get('#password').type('secret_sauce');\ncy.get('#login-button').click(); //sort from high to low\ncy.get('.product_sort_container').select('hilo');\nvar productPrice = ['$15.99', '$29.99', '$49.99', '$15.99', '$9.99', '$7.99'];\nproductPrice.sort();\ncy.get('.inventory_item_price').each(($elem, index) => {// expect($elem.text()).equal(productPrice[index])\n});",
+              "err": {},
+              "uuid": "6a360e8f-e298-442b-bb4a-927f8fd5b50d",
+              "parentUUID": "6a4f8794-eeaf-4f08-a2e3-e3c5554bbbdd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should sort product prices from low to high",
+              "fullTitle": "Sort By Price should sort product prices from low to high",
+              "timedOut": null,
+              "duration": 1209,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//login with a valid user\ncy.get('#user-name').type('standard_user');\ncy.get('#password').type('secret_sauce');\ncy.get('#login-button').click(); //sort low to high\ncy.get('.product_sort_container').select('lohi');\nvar productPrice = ['$49.99', '$29.99', '$15.99', '$15.99', '$9.99', '$7.99'];\nproductPrice.sort().reverse();\ncy.get('.inventory_item_price').each(($elem, index) => {// expect($elem.text()).equal(productPrice[index])\n});",
+              "err": {},
+              "uuid": "77778d94-98e8-41e4-8482-44f6fc88fd63",
+              "parentUUID": "6a4f8794-eeaf-4f08-a2e3-e3c5554bbbdd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6a360e8f-e298-442b-bb4a-927f8fd5b50d",
+            "77778d94-98e8-41e4-8482-44f6fc88fd63"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2678,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
