@@ -11,6 +11,7 @@
     "report": "npx mochawesome-merge cypress/reports/*.json > mochawesome.json && npx marge mochawesome.json && start mochawesome-report/mochawesome.html && rm -f mochawesome.json",
     "datadriven": "npx cypress run --spec cypress/e2e/test/datadriven.cy.js",
     "checkoutflow": "npx cypress run --spec cypress/e2e/test/checkout.cy.js",
+    "remove": "npx cypress run --spec cypress/e2e/test/remove.cy.js",
     "sort": "npx cypress run --spec cypress/e2e/test/sort.cy.js",
     "negativetests": "npx cypress run --spec cypress/e2e/test/negativetests.cy.js"
   },
