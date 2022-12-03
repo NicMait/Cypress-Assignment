@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-12-03T04:10:31.249Z",
+    "end": "2022-12-03T04:10:35.359Z",
+    "duration": 4110,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c8561af9-237d-4855-a642-349501905fc0",
+      "title": "",
+      "fullFile": "cypress\\e2e\\test\\negativetests.cy.js",
+      "file": "cypress\\e2e\\test\\negativetests.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "32d48254-f953-42c0-bda7-9789200d29ce",
+          "title": "Negative Testing",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Omit information in checkout",
+              "fullTitle": "Negative Testing Omit information in checkout",
+              "timedOut": null,
+              "duration": 2984,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// login with valid user\ncy.get('#user-name').type('standard_user');\ncy.get('#password').type('secret_sauce');\ncy.get('#login-button').click(); // Assert that the user is taken to the Products page\ncy.get('.inventory_item_name').should('be.visible');\ncy.get('.title').contains('Products');\ncy.url().should('contain', 'inventory'); //add items to cart\n_addtocart.default.addToCart();\n_addtocart.default.addToCart2();\ncy.get(_addtocart.default.cartIconNumber).should('have.text', 2); //Navigate to cart and remove items\ncy.get(_addtocart.default.cartIcon).should('be.visible');\ncy.get(_addtocart.default.cartIcon).click(); //Checkout empty cart\ncy.get(_addtocart.default.checkoutBtn).should('be.visible');\ncy.get(_addtocart.default.checkoutBtn).click();\ncy.get('#first-name').type('Jamal');\ncy.get('#postal-code').type(1539);\ncy.get(_addtocart.default.ctnBtn).should('be.visible');\ncy.get(_addtocart.default.ctnBtn).click();\ncy.get('h3[data-test=\"error\"]').should('be.visible');",
+              "err": {},
+              "uuid": "cc1385bf-751c-4874-a4a4-b2cebec860ef",
+              "parentUUID": "32d48254-f953-42c0-bda7-9789200d29ce",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login with the incorrect password",
+              "fullTitle": "Negative Testing Login with the incorrect password",
+              "timedOut": null,
+              "duration": 1069,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// login with valid user\ncy.get('#user-name').type('standard_user');\ncy.get('#password').type('password');\ncy.get('#login-button').click();\ncy.get('h3[data-test=\"error\"]').should('be.visible');",
+              "err": {},
+              "uuid": "c5f2a436-5db6-405f-9e23-3bbfc02660bd",
+              "parentUUID": "32d48254-f953-42c0-bda7-9789200d29ce",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "cc1385bf-751c-4874-a4a4-b2cebec860ef",
+            "c5f2a436-5db6-405f-9e23-3bbfc02660bd"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4053,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
